@@ -21,6 +21,8 @@ public class GradeCalc {
             System.out.println("FAIL");
         }
 
+        sc.close();
+
     }
     
 }
