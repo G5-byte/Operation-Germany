@@ -6,7 +6,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.stream.Collectors;
-import javax.swing.GroupLayout.Group;
 
 class Student {
 
@@ -110,7 +109,7 @@ class StudentManagement {
         System.out.println("\nGrouping Students by Pass/Fail");  
         
         Map<Boolean, List<Student>> result = students.stream()
-            .collect(Collectors.partitioningBy(student -> student.getMarks() >= 40));
+            .collect(Collectors.partitioningBy(student -> student.getMarks() >= 60));
 
         System.out.println("\nPassed:");
         result.get(true).forEach(System.out::println);
