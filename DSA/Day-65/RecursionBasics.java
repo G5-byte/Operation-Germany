@@ -45,9 +45,16 @@ public class RecursionBasics {
         return n + sum(n - 1);
     }
 
+    public static int power(int x, int n) {
+        if(n == 0) {
+            return 1;
+        }
+        return x * power(x, n - 1);
+    }
+
     public static void main(String[] args) {
         // Test the recursive methods
-        
+
         // Numbers from 5 to 1
         System.out.println("Numbers from 5 to 1:");
         printNumbers(5); // Call the printNumbers method with n = 5
@@ -76,6 +83,11 @@ public class RecursionBasics {
         // Sum of numbers from 1 to 5
         System.out.println("Sum of numbers from 1 to 5:");
         System.out.println(sum(5)); // Call the sum method with n = 5
+        System.out.println();
+
+        // Power of 2 raised to the 5th power
+        System.out.println("Power of 2 raised to the 5th power:");
+        System.out.println(power(2, 5)); // Call the power method with x = 2 and n = 5
     }
 }
 
