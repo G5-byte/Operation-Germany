@@ -64,6 +64,53 @@ public class Node {
         }
     }
 
+    public static Node deleteAtBeginning(Node head) {
+        if (head == null) {
+            return null;
+        }
+
+        return head.next;
+    }
+
+    public static Node deleteAtEnd(Node head) {
+        if(head == null) {
+            return null;
+        }
+
+        Node current = head;
+        while(current.next.next != null) {
+            current = current.next;
+        }
+
+        current.next = null;
+        return head;
+    }
+
+    public static Node deleteAtPosition(Node head, int position) {
+        if (head == null) {
+            return null;
+        }
+
+        if (position <= 1) {
+            return deleteAtBeginning(head);
+        }
+
+        Node current = head;
+        int currentPosition = 1;
+
+        while (current != null && currentPosition < position - 1) {
+            current = current.next;
+            currentPosition++;
+        }
+
+        if (current == null || current.next == null) {
+            return deleteAtEnd(head);
+        }
+
+        current.next = current.next.next;
+        return head;
+    }
+
     public static void main(String[] args) {
         Node first = new Node(10);
         Node second = new Node(20);
@@ -80,6 +127,9 @@ public class Node {
         first = insertAtBeginning(first, 5);
         first = insertAtPosition(first, 25, 4);
         first = insertAtEnd(first, 60);
+        first = deleteAtBeginning(first);
+        first = deleteAtEnd(first);
+        first = deleteAtPosition(first, 2);
         printList(first);
     }
 }
