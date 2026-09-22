@@ -132,6 +132,20 @@ public class Node {
         return -1;
     }
 
+    public static Node reverseList(Node head) {
+        Node previous = null;
+        Node current = head;
+
+        while (current != null) {
+            Node next = current.next;
+            current.next = previous;
+            previous = current;
+            current = next;
+        }
+
+        return previous;
+    }
+
      static void printList(Node head) {
         Node current = head;
 
@@ -160,6 +174,7 @@ public class Node {
         first = deleteAtBeginning(first);
         first = deleteAtEnd(first);
         first = deleteAtPosition(first, 2);
+        first = reverseList(first);
         printList(first);
         System.out.println();
         System.out.println("Length : " + getLength(first));
