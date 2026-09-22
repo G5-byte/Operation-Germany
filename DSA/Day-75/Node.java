@@ -55,15 +55,6 @@ public class Node {
         return head;
     }
 
-    static void printList(Node head) {
-        Node current = head;
-
-        while (current != null) {
-            System.out.println(current.data);
-            current = current.next;
-        }
-    }
-
     public static Node deleteAtBeginning(Node head) {
         if (head == null) {
             return null;
@@ -73,7 +64,11 @@ public class Node {
     }
 
     public static Node deleteAtEnd(Node head) {
-        if(head == null) {
+         if(head == null) {
+            return null;
+        }
+        
+        if(head.next == null) {
             return null;
         }
 
@@ -111,6 +106,41 @@ public class Node {
         return head;
     }
 
+    public static int getLength(Node head) {
+        int count = 0;
+
+        Node current = head;
+        while(current != null){
+            count++;
+            current = current.next;
+        }
+
+        return count;
+    }
+
+    public static int search(Node head, int target){
+        Node current = head;
+        int position = 1;
+        while (current != null) {
+            if(current.data == target){
+                return position;
+            }
+            position++;
+            current = current.next;
+        }
+
+        return -1;
+    }
+
+     static void printList(Node head) {
+        Node current = head;
+
+        while (current != null) {
+            System.out.print(current.data + " -> ");
+            current = current.next;
+        }
+    }
+
     public static void main(String[] args) {
         Node first = new Node(10);
         Node second = new Node(20);
@@ -131,5 +161,8 @@ public class Node {
         first = deleteAtEnd(first);
         first = deleteAtPosition(first, 2);
         printList(first);
+        System.out.println();
+        System.out.println("Length : " + getLength(first));
+        System.out.println("Found at Position : " + search(first, 30));
     }
 }
