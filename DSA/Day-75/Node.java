@@ -146,6 +146,22 @@ public class Node {
         return previous;
     }
 
+    public static int findMiddle(Node head) {
+        if (head == null) {
+            return -1;
+        }
+
+        Node slow = head;
+        Node fast = head;
+
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+
+        return slow.data;
+    }
+
      static void printList(Node head) {
         Node current = head;
 
@@ -174,10 +190,15 @@ public class Node {
         first = deleteAtBeginning(first);
         first = deleteAtEnd(first);
         first = deleteAtPosition(first, 2);
-        first = reverseList(first);
-        printList(first);
         System.out.println();
         System.out.println("Length : " + getLength(first));
         System.out.println("Found at Position : " + search(first, 30));
+        first = reverseList(first);
+        int middle = findMiddle(first);
+        System.out.println("Middle : " + middle);
+        printList(first);
+        
+        
+        
     }
 }
