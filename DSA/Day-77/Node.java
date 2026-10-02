@@ -27,6 +27,31 @@ public class Node { // Detect Cycle in a Linked list
         return false;
     }
 
+    public static Node detectCycle(Node head) {
+        if (head == null) {
+            return null;
+        }
+
+        Node slow = head;
+        Node fast = head;
+
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+
+            if (slow == fast) {
+                slow = head;
+                while (slow != fast) {
+                    slow = slow.next;
+                    fast = fast.next;
+                }
+                return slow;
+            }
+        }
+
+        return null; // No cycle
+    }
+
     public static void printList(Node head) {
         Node current = head;
         while (current != null) {
@@ -52,5 +77,7 @@ public class Node { // Detect Cycle in a Linked list
         // printList(first);
 
         System.out.println(hasCycle(first));
+        Node cyclestart = detectCycle(first);
+        System.out.println(cyclestart.data);
     }
 }
