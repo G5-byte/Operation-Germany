@@ -1,18 +1,41 @@
 {
   "v": 1,
-  "updatedAt": 1791111286094,
+  "updatedAt": 1791111444214,
   "devices": {
     "2b1c1885-1280-4525-983c-493b4aabb83b": {
-      "lastSeen": 1791111285548
+      "lastSeen": 1791111443712
     }
   },
-  "problems": {},
-  "achievements": {},
+  "problems": {
+    "83": {
+      "attempts": 1,
+      "bestMemory": "45.5 MB (Beats 51%)",
+      "bestRuntime": "0 ms (Beats 100%)",
+      "date": "2026-10-04",
+      "difficulty": "Easy",
+      "firstSolvedOn": "2026-10-04",
+      "folderName": "0083-Remove-Duplicates-from-Sorted-List",
+      "language": "Java",
+      "number": 83,
+      "slug": "remove-duplicates-from-sorted-list",
+      "solutionCount": 1,
+      "tags": [
+        "Linked List"
+      ],
+      "title": "Remove Duplicates from Sorted List",
+      "at": 1791111443712
+    }
+  },
+  "achievements": {
+    "first_blood": 1791111297320
+  },
   "sheets": {},
-  "days": [],
+  "days": [
+    "2026-10-04"
+  ],
   "bests": {
-    "longestStreak": 0,
-    "pushes": 0
+    "longestStreak": 1,
+    "pushes": 1
   },
   "identity": {
     "installId": "3cea096d-6a69-4eb0-a328-b3acb981dc14",
