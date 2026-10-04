@@ -1,73 +1,40 @@
+<div align="center">
 
-# 🚀 Operation Germany 
+<h1>LeetCode Solutions</h1>
+<p><em>Automatically synced with every accepted submission</em></p>
 
-Welcome to my learning journey toward becoming a Java Backend + AI Engineer.
+![Total Solved](https://img.shields.io/badge/TOTAL%20SOLVED-1%2F3616-6c5ce7?style=for-the-badge&labelColor=1a1a2e) ![Easy](https://img.shields.io/badge/EASY-1%2F895-00b8a3?style=for-the-badge&labelColor=1a1a2e) ![Medium](https://img.shields.io/badge/MEDIUM-0%2F1878-ffa116?style=for-the-badge&labelColor=1a1a2e) ![Hard](https://img.shields.io/badge/HARD-0%2F843-ef4743?style=for-the-badge&labelColor=1a1a2e)
 
-## 🎯 Goal
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset=".leetsync/stats-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset=".leetsync/stats-light.svg">
+  <img alt="Progress, languages and quick stats" src=".leetsync/stats-dark.svg">
+</picture>
 
-To build strong skills in Java Backend Development, Artificial Intelligence, and Software Engineering while preparing for higher studies and a professional career in Germany.
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset=".leetsync/calendar-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset=".leetsync/calendar-light.svg">
+  <img alt="Solve activity over the last year" src=".leetsync/calendar-dark.svg">
+</picture>
 
----
-
-## 📚 Current Phase
-
-**Phase 1 – Foundation**
-
-Currently learning:
-
-- Core Java
-- Data Structures & Algorithms
-- SQL
-- Git & GitHub
-- Backend Development Fundamentals
-- AI Foundations
+</div>
 
 ---
 
-## 🗂 Repository Structure
+<div align="center">
 
-```
-Core-Java/
-DSA/
-Backend/
-AI/
-Projects/
-Notes/
-Resources/
-```
+### ALL SOLUTIONS
+
+</div>
+
+| # | Problem | Difficulty | Language | Date |
+|:---:|:--------|:----------:|:--------:|:----:|
+| 83 | [Remove Duplicates from Sorted List](problems/0083-Remove-Duplicates-from-Sorted-List) | 🟩 Easy | `Java` | 2026-10-04 |
 
 ---
 
-## 🛠 Tech Stack (Learning)
+<div align="center">
 
-- Java
-- Git & GitHub
-- SQL
-- Spring Boot (Upcoming)
-- MongoDB (Upcoming)
-- Docker (Upcoming)
-- Python (Upcoming)
-- Machine Learning (Upcoming)
+<sub>Auto-synced by <strong>LeetSync</strong> · Built by <a href="https://deveshsamant.in/">Devesh Samant</a></sub>
 
----
-
-## 📅 Daily Progress
-
-I update this repository regularly with:
-
-- Daily learning notes
-- Java practice
-- DSA problems
-- Backend projects
-- AI projects
-- Progress toward Germany 2027
-
----
-
-## 🌍 Long-Term Vision
-
-Become a skilled Software Engineer capable of building scalable backend systems and AI-powered applications while preparing for international opportunities in Germany.
-
----
-
-*"Small progress every day leads to big achievements."*
+</div>
