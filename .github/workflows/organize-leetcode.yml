@@ -1,0 +1,45 @@
+name: Organize LeetCode Solutions
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  organize:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Move LeetSync solutions
+        run: |
+          mkdir -p DSA/LeetCode
+
+          if [ -d "problems" ] && [ "$(find problems -mindepth 1 -maxdepth 1 | head -n 1)" ]; then
+            find problems -mindepth 1 -maxdepth 1 -type d -print0 | while IFS= read -r -d '' folder; do
+              name=$(basename "$folder")
+              if [ ! -e "DSA/LeetCode/$name" ]; then
+                git mv "$folder" "DSA/LeetCode/$name"
+              fi
+            done
+          fi
+
+      - name: Commit organized solutions
+        run: |
+          if git diff --cached --quiet; then
+            git add -A
+          fi
+
+          if git diff --cached --quiet; then
+            echo "Nothing to organize."
+          else
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git commit -m "Organize LeetCode solutions under DSA/LeetCode"
+            git push
+          fi
