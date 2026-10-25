@@ -1,0 +1,40 @@
+class Solution {
+    public int closedIsland(int[][] grid) {
+        int rows = grid.length, cols = grid[0].length;
+        int count = 0;
+        
+        for (int r = 0; r < rows; r++) {
+            for (int c = 0; c < cols; c++) {
+                if (grid[r][c] == 0) {
+                    if (dfs(grid, r, c)) {
+                        count++;
+                    }
+                }
+            }
+        }
+        return count;
+    }
+    
+    private boolean dfs(int[][] grid, int r, int c) {
+        // Base Case 1: If out of bounds, the island touches the edge (not closed)
+        if (r < 0 || c < 0 || r >= grid.length || c >= grid[0].length) {
+            return false;
+        }
+        
+        // Base Case 2: If it's water (1) or already visited, this path is bounded
+        if (grid[r][c] == 1) {
+            return true;
+        }
+        
+        // Mark current land as visited by turning it into water (1)
+        grid[r][c] = 1;
+        
+        // Recursively check all 4 directions (all must return true to be closed)
+        boolean left = dfs(grid, r, c - 1);
+        boolean right = dfs(grid, r, c + 1);
+        boolean up = dfs(grid, r - 1, c);
+        boolean down = dfs(grid, r + 1, c);
+        
+        return left && right && up && down;
+    }
+}
