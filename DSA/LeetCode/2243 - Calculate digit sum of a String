@@ -1,0 +1,28 @@
+class Solution {
+    public String digitSum(String s, int k) {
+        // Repeat the rounds until the length of s is greater than k
+        while (s.length() > k) {
+            StringBuilder nextRoundStr = new StringBuilder();
+
+            // Divide s into consecutive groups of size k
+            for(int i = 0; i < s.length(); i+=k) {
+                int end = Math.min(i+k, s.length());
+                String group = s.substring(i, end);
+
+                // Calculate the sum of all digits in the group
+                int sum = 0;
+                for(int j = 0; j < group.length(); j++) {
+                    sum += group.charAt(j) - '0';
+                }
+
+                // Append the sum string to the next round result
+                nextRoundStr.append(sum);
+            }
+
+            // Update s with the newly formed string
+            s = nextRoundStr.toString();
+        }
+
+        return s;
+    }
+}
